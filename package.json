@@ -2,6 +2,7 @@
   "name": "mtse",
   "private": true,
   "scripts": {
+    "setup": "powershell -ExecutionPolicy Bypass -File ./setup.ps1",
     "install:all": "npm install --prefix mtse-backend/beplayground && npm install --prefix mtse-frontend-store && npm install --prefix mtse-frontend-admin",
     "start:backend": "npm run start:dev --prefix mtse-backend/beplayground",
     "start:store": "npm run dev --prefix mtse-frontend-store",
