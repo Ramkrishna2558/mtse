@@ -1,0 +1,15 @@
+{
+  "name": "mtse",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix mtse-backend/beplayground && npm install --prefix mtse-frontend-store && npm install --prefix mtse-frontend-admin",
+    "start:backend": "npm run start:dev --prefix mtse-backend/beplayground",
+    "start:store": "npm run dev --prefix mtse-frontend-store",
+    "start:admin": "npm run dev --prefix mtse-frontend-admin",
+    "start": "concurrently --kill-others-on-fail \"npm run start:backend\" \"wait-on http://localhost:3000 && npm run start:store\" \"wait-on http://localhost:3000 && npm run start:admin\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "wait-on": "^8.0.0"
+  }
+}
